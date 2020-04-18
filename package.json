@@ -1,0 +1,52 @@
+{
+  "name": "cyclejs-firebase",
+  "version": "0.0.1",
+  "description": "A cyclejs driver for firebase tools (firestore, authentication)",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "build": "tsc",
+    "test": "jest --config jestconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hollwann/cyclejs-firebase.git"
+  },
+  "keywords": [
+    "cyclejs",
+    "firebase",
+    "firestore",
+    "firebase",
+    "auth"
+  ],
+  "author": "hollwann",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/hollwann/cyclejs-firebase/issues"
+  },
+  "homepage": "https://github.com/hollwann/cyclejs-firebase#readme",
+  "dependencies": {
+    "@cycle/run": "^5.4.0",
+    "firebase": "^7.14.1",
+    "xstream": "^11.11.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "jest": "^25.3.0",
+    "prettier": "^2.0.4",
+    "ts-jest": "^25.4.0",
+    "tslint": "^6.1.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.8.3"
+  },
+  "files": [
+    "lib/**/*"
+  ]
+}
